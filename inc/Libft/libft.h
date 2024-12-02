@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 13:02:55 by tiade-al          #+#    #+#             */
-/*   Updated: 2024/04/24 12:07:15 by tiade-al         ###   ########.fr       */
+/*   Updated: 2024/11/26 23:43:24 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdint.h>
+# include <signal.h>
+# include <fcntl.h>
+//GNL**
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+size_t	ft_strlen_gnl(const char *s);
+char	*ft_strjoin_gnl(char *str, char *buffer);
+int		ft_checknewline_gnl(char *buffer, int i);
+//GNL**
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 11:41:01 by tiade-al          #+#    #+#              #
-#    Updated: 2024/04/30 17:13:14 by tiade-al         ###   ########.fr        #
+#    Updated: 2024/11/26 23:47:22 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,13 @@ ft_memmove.c ft_strdup.c  ft_strlen.c  ft_strrchr.c \
 ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memset.c ft_memcpy.c \
 ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 ft_striteri.c ft_memchr.c ft_strlcat.c\
-ft_strjoin.c ft_strtrim.c ft_strmapi.c
+ft_strjoin.c ft_strtrim.c ft_strmapi.c\
+ft_lstsize.c ft_lstnew.c ft_lstadd_front.c ft_lstlast.c\
+ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c\
+ft_lstmap.c ft_lstclear.c\
+get_next_line_utils.c get_next_line.c
 
 OBJS			= $(SRCS:.c=.o)
-
-BONUS			=	ft_lstsize.c ft_lstnew.c ft_lstadd_front.c ft_lstlast.c\
-ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstiter.c ft_lstmap.c ft_lstclear.c
-
-BONUS_OBJ		= $(BONUS:.c=.o)
 
 CC				= cc
 RM				= rm -f
@@ -37,15 +36,12 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
 
-bonus:			$(BONUS) $(BONUS_OBJ) 
-				ar rcs $(NAME) $(BONUS_OBJ)
-
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJ)
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
-re:				fclean $(NAME) 
+re:				fclean $(NAME)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re
